@@ -1,7 +1,6 @@
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at http://www.site.uottawa.ca/school/research/lloseng/
-
 import java.io.*;
 
 /**
@@ -33,7 +32,7 @@ public class PointCPTest
    */
   public static void main(String[] args)
   {
-    PointCP point;
+    PointCP3 point;
 
     System.out.println("Cartesian-Polar Coordinates Conversion Program");
 
@@ -42,7 +41,7 @@ public class PointCPTest
     // If he did not, prompt the user for them.
     try
     {
-      point = new PointCP(args[0].toUpperCase().charAt(0), 
+      point = new PointCP3(args[0].toUpperCase().charAt(0), 
         Double.valueOf(args[1]).doubleValue(), 
         Double.valueOf(args[2]).doubleValue());
     }
@@ -80,7 +79,7 @@ public class PointCPTest
    * @throws IOException If there is an error getting input from
    *         the user.
    */
-  private static PointCP getInput() throws IOException
+  private static PointCP3 getInput() throws IOException
   {
     byte[] buffer = new byte[1024];  //Buffer to hold byte input
     boolean isOK = false;  // Flag set if input correct
@@ -158,6 +157,6 @@ public class PointCPTest
       isOK = false;
     }
     //Return a new PointCP object
-    return (new PointCP(coordType, a, b));
+    return (new PointCP3(coordType, a, b));
   }
 }
